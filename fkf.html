@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>بنیاد دانش آزاد</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/fkf.css" rel="stylesheet" type="text/css" media="all" />
+		<script type='text/javascript' src='js/jquery.js'></script>
+	</head>
+	<body>
+		
+		<h1>Free Knowledge Foundation</h1>
+
+		
+		
+		<div class="wrap">
+			<div class="main">
+				<!-- start menu -->
+				<ul class="menu">
+					<li><a class="button" id="hue" onmouseover="infoMenu(1)">صفحه اصلی</a></li>
+					<li class="active"><a class="button" id="saturation" onmouseover="infoMenu(2)">درباره ما</a></li>
+					<li><a class="button" id="lightness" onmouseover="infoMenu(3)">پروژه‌ها</a></li>
+					<li><a class="button" id="namedcolors" onmouseover="infoMenu(2)">ویکی</a></li>
+					<li><a class="button" id="rgb" onmouseover="infoMenu(3)">گروه‌ها</a></li>
+				</ul>
+				<div class="clear">
+				</div>
+				<div class="top-nav">
+					<nav class="clearfix">
+						<ul>
+						<li><a href="#">صفحه اصلی</a></li>
+						<li><a href="#">درباره ما</a></li>
+						<li><a href="#">پروژه‌ها</a></li>
+						<li><a href="#">ویکی</a></li>
+						<li><a href="#">گروه‌ها</a></li>
+						</ul>
+						<a href="#" id="pull">Menu</a>
+					</nav>
+				</div>
+				
+				
+				<div id="content">
+						<div id="infcnt1">
+							<p1>FSUG = Free Software Users Group</p1>
+							<br/>
+							<p1>Libro = Free Robotic Group</p1>
+						</div>
+						<div id="infcnt2">
+							<p1>جلسات هفتگی گروه کاربران نرم‌افزار آزاد</p1>
+						</div>
+						<ul id="infcnt3">
+							<li><a href="http://www.fsug.ir/wiki/index.php?title=%D8%B3%D8%A7%D9%85%D8%A7%D9%86%D9%87%E2%80%8C%DB%8C_%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA_%D8%AF%D8%A7%D9%86%D8%B4_%D8%A2%D8%B2%D8%A7%D8%AF&action=edit&redlink=1">Free Knowledge Management System</a></li>
+							<li><a href="http://www.fsug.ir/wiki/index.php?title=%DA%AF%D9%86%D8%AC%D9%88%D8%B1">Ganjoor</a></li>
+							<li><a href="http://www.fsug.ir/wiki/index.php?title=%D9%82%D9%84%D9%85_%D8%A2%D8%B2%D8%A7%D8%AF_%D9%BE%D8%A7%D8%B1%D8%B3%DB%8C">Free Persian Font</a></li>
+							<li><a href="http://www.fsug.ir/wiki/index.php?title=%D9%BE%D9%88%D8%B1%D8%AA%D8%A7%D9%84_%D9%85%D9%88%D9%82%D8%AA_%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C&action=edit&redlink=1">Temporary Portal</a></li>
+							<li><a href="http://www.fsug.ir/wiki/index.php?title=%D9%81%DB%8C%D9%84%D9%85%E2%80%8C%D9%87%D8%A7%DB%8C_%D8%A2%D9%85%D9%88%D8%B2%D8%B4%DB%8C">Educational Videos</a></li>
+							<li><a href="http://www.fsug.ir/wiki/index.php?title=%D9%88%D8%A7%DA%98%D9%87%E2%80%8C%D9%86%D8%A7%D9%85%D9%87%E2%80%8C%DB%8C_%D8%AF%DB%8C%D8%AC%DB%8C%D8%AA%D8%A7%D9%84&action=edit&redlink=1">Digital Dictionary</a></li>
+							<li><a href="http://www.fsug.ir/wiki/index.php?title=%D8%B1%D9%88%D8%A8%D8%A7%D8%AA%DB%8C%DA%A9_%D8%A2%D8%B2%D8%A7%D8%AF&action=edit&redlink=1">Free Robotics</a></li>
+						</ul>
+						
+						
+				</div>
+				
+<!--				
+				<div>
+					<a class="button-readme" id="readme">Read More</a>
+				</div>
+-->				
+
+				
+				
+				
+				
+				
+				
+<script type="text/javascript" language="JavaScript">
+<!--
+function infoMenu(i) { 
+	switch(i)
+	{case 1:
+		$("#inf1").css("background","none");
+	    $("#inf2").css("background","url('assets/templates/science/images/mnu-btn.png') no-repeat left bottom");
+	    $("#inf3").css("background","url('assets/templates/science/images/mnu-btn.png') no-repeat -12px bottom");
+	    $("#infcnt1").fadeIn();
+	    $("#infcnt2").fadeOut();
+	    $("#infcnt3").fadeOut();
+        break;
+	case 2:
+	    $("#inf1").css("background","url(assets/templates/science/images/mnu-btn.png) no-repeat right bottom");
+		$("#inf2").css("background","none");
+	    $("#inf3").css("background","url(assets/templates/science/images/mnu-btn.png) no-repeat left bottom");
+	    $("#infcnt1").fadeOut();
+	    $("#infcnt2").fadeIn();
+	    $("#infcnt3").fadeOut();
+        break;
+	case 3:
+	    $("#inf1").css("background","url(assets/templates/science/images/mnu-btn.png) no-repeat -12px bottom");
+	    $("#inf2").css("background","url(assets/templates/science/images/mnu-btn.png) no-repeat right bottom");
+	    $("#inf3").css("background","none");
+	    $("#infcnt1").fadeOut();
+	    $("#infcnt2").fadeOut();
+	    $("#infcnt3").fadeIn();
+        break;
+    }
+}
+infoMenu(1);
+$("#sbr li").mouseover(function() {
+	$("#sbr li").stop();
+	$("#sbr li").not(this).animate({ 
+    'padding-right' : 31,
+    'padding-left' : 11,
+  });
+    $(this).animate({ 
+    'padding-right' : 21,
+    'padding-left' : 21,
+  });
+});
+$("#sbr li").click(function() {
+	$("#sbr li").stop();
+	$("#sbr li").not(this).removeClass("active");
+	$(this).addClass("active");
+        var datadiv=$("#" + $(this).data('info'));
+        $("#cnt div").not(datadiv).hide();
+        $(datadiv).show();
+});
+$("#sbr li").mouseleave(function() {
+	$("#sbr li").stop();
+	$("#sbr li").animate({ 
+    'padding-right' : 31,
+    'padding-left' : 11,
+  });
+});
+$("#sbr li").first().click();
+-->
+</script>				
+				
+			</div>
+		</div>
+	</body>
+</html>
