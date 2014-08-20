@@ -1,0 +1,500 @@
+/*Basic reset*/
+* {margin: 0; padding: 0;}
+
+html, body {height: 100%;}
+
+body {
+	background: #B1E3E2;
+	box-shadow: inset 0 0 100px 20px #80D0CF;
+	text-align: center;
+	direction: rtl;
+}
+
+h1 {
+	display: inline-block;
+	font-size: 28px;
+	line-height: 28px;
+	color: #8699A0;
+	text-shadow: 0 0 1px #758890;
+	margin: 12px 0;
+	font-family: arial, verdana;
+	outline: none;
+	padding: 14px 30px;
+	position: relative;
+	text-transform: uppercase;
+	/*A little shadow for 3d effect*/
+	/*Finally another shadow to negate some aspects of the :after element to complete the effect. This drops a shrinked shadow over the :after element with the same color like that of the background. The shadow is shrinked by the same offset amount = 18. And it is moved down by twice the offset amount to cover the entire height of the :after element*/
+	box-shadow: 
+		0 0 30px 0 rgba(0, 0, 0, 0.1), 
+		0 36px 0 -18px #B1E3E2;
+}
+
+/*The ribbon ends*/
+h1:before {
+	content: '';
+	position: absolute;
+	top: 18px;
+	left: -15%;
+	z-index: -1;
+	width: 130%;
+	/*We will be using the triangle logic - 2 sided borders and 0 height. That will create negative triangles on the left and right*/
+	height: 0;
+	border: 28px solid rgba(0, 0, 0, 0);
+	border-left: 28px solid #B1E3E2;
+	border-right: 28px solid #B1E3E2;
+	/*Same color as the container which is the body in this case*/
+}
+
+/*The after pseudo element will negatve the bottom part of the ribbon completing the effect*/
+h1:after {
+	content: '';
+	width: 100%;
+	height: 0;
+	position: absolute;
+	top: 100%; left: 0;
+	z-index: -1;
+	/*The height of the top border is same as width of the left/right borders for the smoothest effect. The height of the top border is also the same as the offset the :before element has from the top*/
+	border-top: 18px solid #99acb2;
+	border-left: 18px solid transparent;
+	border-right: 18px solid transparent;
+}
+
+h1, h1:before {
+	/*Some cool multi-background - we will use a combination of 4 backgrounds to create a cool effect*/
+	background-image: 
+		/*2 grey borders*/
+		linear-gradient(
+			transparent 8%, 
+			rgba(0, 0, 0, 0.1) 8%, 
+			rgba(0, 0, 0, 0.1) 14%, 
+			transparent 14%, 
+			transparent 86%, 
+			rgba(0, 0, 0, 0.1) 86%, 
+			rgba(0, 0, 0, 0.1) 92%, 
+			transparent 92%
+		), 
+		/*white gloss gradient*/
+		linear-gradient(
+			rgba(255, 255, 255, 0.75), 
+			rgba(255, 255, 255, 0) 
+		), 
+		/*thin stripes*/
+		linear-gradient(
+			45deg, 
+			transparent 40%, 
+			rgba(0, 0, 0, 0.1) 40%, 
+			rgba(0, 0, 0, 0.1) 60%, 
+			transparent 60%
+		), 
+		/*white base*/
+		linear-gradient(white, white); 
+	background-size: 
+		cover, /*borders*/
+		cover, /*white gloss*/
+		4px 4px, /*thin stripes*/
+		cover; /*base white*/
+}
+
+h1, h1:before, h1:after {
+	box-sizing: border-box;
+	/*Fix to make the borders appear on the ribbon ends also*/
+	background-origin: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.button {
+		background-image: linear-gradient(
+		rgba(255,255,255,0.6), 
+		rgba(0,0,0,0.6)
+	);
+	
+	display: inline-block;
+	height: 70px; width: 100%;
+	line-height: 70px; /*Same as height*/
+	margin: 5px;
+	
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+	
+	border-radius: 5px;
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+#rgb {
+	background-color: #FF0; /*yellow*/
+	animation: rgb 3s infinite alternate;
+}
+@keyframes rgb {
+	/* 0% will fallback to the default background-color of #rgb*/
+	50% {background-color: #06F; /*blue*/ }
+	100% {background-color: #F00; /*red*/}
+}
+
+#namedcolors {
+	background-color: red;
+	animation: namedcolors 0.3s infinite alternate;
+}
+@keyframes namedcolors {
+	100% {background-color: orange;}
+}
+
+#hue {
+	background-color: hsl(0, 100%, 50%); /*red*/
+	animation: hue 3s infinite alternate;
+}
+@keyframes hue {
+	/*hue will animate from 0 to 360. Saturation and Lightness remain constant*/
+	20% {background-color: hsl(72, 100%, 50%);}
+	40% {background-color: hsl(144, 100%, 50%);}
+	60% {background-color: hsl(216, 100%, 50%);}
+	80% {background-color: hsl(288, 100%, 50%);}
+	100% {background-color: hsl(360, 100%, 50%);}
+}
+#readme {
+	background-color: hsl(0, 100%, 50%); /*red*/
+	animation: hue 3s infinite alternate;
+}
+@keyframes hue {
+	/*hue will animate from 0 to 360. Saturation and Lightness remain constant*/
+	20% {background-color: hsl(72, 100%, 50%);}
+	40% {background-color: hsl(144, 100%, 50%);}
+	60% {background-color: hsl(216, 100%, 50%);}
+	80% {background-color: hsl(288, 100%, 50%);}
+	100% {background-color: hsl(360, 100%, 50%);}
+}
+#saturation {
+	/*0% saturated red = grey*/
+	background-color: hsl(0, 0%, 50%); 
+	animation: saturation 3s infinite alternate;
+}
+@keyframes saturation {
+	/*100% saturated red*/
+	100% {background-color: hsl(0, 100%, 50%); }
+}
+
+#lightness {
+	/*0% lightness = black*/
+	background-color: hsl(0, 100%, 0%); 
+	animation: lightness 3s infinite alternate;
+}
+@keyframes lightness {
+	/*50% lightness = red*/
+	50% {background-color: hsl(0, 100%, 50%); }
+	/*100% lightness = white*/
+	100% {background-color: hsl(0, 100%, 100%); }
+}
+
+/*animating gradients to flat colors - a bit complex*/
+
+#bottomflat {
+	color: #999;
+	/*a white-transparent gradient above black base, making it a white-black gradient*/
+	background-color: black;
+	background-image: linear-gradient(white, rgba(255, 255, 255, 0));
+	animation: bottomflat 3s infinite alternate;
+}
+@keyframes bottomflat {
+	100% {background-color: white;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wrap{
+	margin:0 auto;
+	width:75%;
+}
+.main{
+	margin: 2% 0;
+}
+/* start menu */
+.menu{
+	background: #B1E3E2;
+	margin-bottom: 1%;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+}
+.menu  li{
+	display: inline-block;
+	padding: 0.5% 1%;
+}
+.menu  li a{
+	display: block;
+	color: #808080;
+	font-size: 1.1em;
+	text-transform: uppercase;
+}
+.menu  li.active a,.menu  li a:hover{
+	color: #FFA0A0;
+}
+/* start top_nav */
+.top-nav{
+	display: none;
+}
+	.nav_bg{
+		background: #464646;
+	}
+	.clearfix {
+		height: 40px;
+		width: 100%;
+		font-size: 11pt;
+		position: relative;
+		z-index: 9999;
+	}
+	.clearfix ul {
+		padding: 0;
+		margin: 0 auto;
+		display: none;
+		background: #f0f0f0;
+	}
+	.clearfix li {
+		display: block;
+	}
+	.clearfix a {
+		color: #555555;
+		font-size:15px;
+		font-weight:bold;
+		text-transform:uppercase;
+		display: block;
+		width:100%;
+		text-indent: 10px;
+		text-align: left;
+		text-decoration: none;
+		line-height: 40px;
+		-webkit-transition: all 0.3s ease-out;
+		-moz-transition: all 0.3s ease-out;
+		-ms-transition: all 0.3s ease-out;
+		-o-transition: all 0.3s ease-out;
+		transition: all 0.3s ease-out;
+	}
+	.clearfix li a {
+		border-bottom: 1px solid rgba(90, 85, 73, 0.17);
+		box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+	}
+	.clearfix li:last-child a {
+		border-right: 0;
+	}
+	.clearfix a:hover,.clearfix a:active {
+		background: #71CF97;
+		color:#ffffff;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#content {
+	position: relative;
+	direction: rtl;
+	-moz-box-shadow:0px 0px 200px #fff;
+	-webkit-box-shadow:0px 0px 200px #fff;
+	box-shadow:0px 0px 200px #fff;
+	margin-top: 110px;
+	-moz-border-radius-bottomleft: 200px;
+	-moz-border-radius-topleft: 200px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;
+}
+#content {
+	height: 200px;
+	width: 75%;
+	clear: both;
+	position: relative;
+	border-top-width: 5px;
+	border-bottom-width: 5px;
+	border-left-width: 5px;
+	border-right-width: 5px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-style: solid;
+	border-top-color: #fff;
+	border-bottom-color: #fff;
+	border-left-color: #fff;
+	border-right-color: #fff;
+		
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 10%;
+	margin: 0 auto;
+}
+#content #infcnt1 {
+	margin: 10px;
+	padding: 10px;
+	text-decoration: none;
+	color: #CC3300;
+	font-weight: bold;
+	font-size: 16px;
+	font-family: "trebuchet MS";
+}
+#content #infcnt2 {
+	margin: 10px;
+	padding: 10px;
+	text-decoration: none;
+	color: #CC3300;
+	font-weight: bold;
+	font-size: 16px;
+	font-family: "trebuchet MS";
+}
+/*
+#content #infcnt3 {
+	margin: 10px;
+	padding: 10px;
+	text-decoration: none;
+	color: #CC3300;
+	font-weight: bold;
+	font-size: 16px;
+	font-family: "trebuchet MS";
+}
+*/
+#content > a {
+	margin: 10px;
+	padding: 10px;
+	text-decoration: none;
+	color: #CC3300;
+	font-weight: bold;
+	font-size: 16px;
+	font-family: "trebuchet MS";
+}
+#content a:hover {
+	color: #FF3300;
+}
+
+.button-readme {
+		background-image: linear-gradient(
+		rgba(255,255,255,0.6), 
+		rgba(0,0,0,0.6)
+	);
+	position: absolute;
+	display: inline-block;
+	height: 50px; width: 6%;
+	line-height: 150%; /*Same as height*/
+	margin: -4% 22.1%;
+	color: white;
+	font-size: 1em;
+	font-weight: bold;
+	font-family: "Trebuchet MS";
+	text-align: center;
+	border-radius: 5px;
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+ul {
+	list-style-type: none;
+}
+
